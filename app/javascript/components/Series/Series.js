@@ -26,6 +26,4 @@ const Series = () => {
 
 export default Series;
 
-const Home = styled.div`
-  max-width: 1200px;
-`;
+const Home = styled.div``;

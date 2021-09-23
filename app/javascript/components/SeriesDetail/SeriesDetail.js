@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import _Character from "./_Character";
 
 const SeriesDetail = (props) => {
   const [series, setSeries] = useState({});
@@ -31,16 +33,21 @@ const SeriesDetail = (props) => {
   let characters;
   if (loaded && series.included) {
     characters = series.included.map((item) => {
-      // console.log("mapping", item);
+      console.log("mapping", item);
       return (
-        <>
-          <h3>{item.attributes.name}</h3>
-          <img src={item.attributes.image_url} />
-        </>
+        <_Character key={item.attributes.name} attributes={item.attributes} />
       );
     });
   }
-  return <div>{characters}</div>;
+  return <Grid>{characters}</Grid>;
 };
 
 export default SeriesDetail;
+
+const Grid = styled.div`
+  margin: 20px auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+`;
