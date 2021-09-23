@@ -1,0 +1,18 @@
+[
+  {
+    "name":"Naruto",
+    "image_url":"https://i.ibb.co/jb5vVCM/naruto-0.jpg"
+  },
+  {
+    "name":"Bleach",
+    "image_url":"https://i.ibb.co/pnN9Fbk/bleach-0.jpg"
+  },
+  {
+    "name":"Dragon Ball Z",
+    "image_url":"https://i.ibb.co/4j2zR6y/dragonball-0.jpg"
+  },
+  {
+    "name":"Inuyasha",
+    "image_url":"https://i.ibb.co/PFGQVzK/inuyasha-0.jpg"
+  }
+]
