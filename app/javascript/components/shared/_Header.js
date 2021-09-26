@@ -1,9 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const _Header = () => {
   return (
     <div style={styles}>
-      <h3>This is Header</h3>
+      <h1>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          Omega
+        </Link>
+      </h1>
     </div>
   );
 };
@@ -11,7 +16,10 @@ const _Header = () => {
 export default _Header;
 
 const styles = {
-  maxHeight: "70px",
+  top: "0",
+  backgroundColor: "#00ADB5",
+  position: "fixed",
+  width: "80%",
   padding: "15px",
-  backgroundColor: "coral",
+  zIndex: "1",
 };

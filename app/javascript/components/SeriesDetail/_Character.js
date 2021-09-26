@@ -19,7 +19,7 @@ const _Character = (props) => {
         <img src={props.attributes.image_url} alt="" />
       </Avatar>
       <CharacterName>{props.attributes.name}</CharacterName>
-      <CharacterBio>{truncate(character_bio, 100)}</CharacterBio>
+      <CharacterBio>{truncate(character_bio, 150)}</CharacterBio>
     </Profile>
   );
 };
@@ -27,15 +27,26 @@ const _Character = (props) => {
 export default _Character;
 
 const Profile = styled.div`
-  border: 1px solid black;
+  border: 1px solid #eeeeee;
   margin: 20px auto;
+  padding: 20px 15px;
   border-radius: 10px;
+  text-align: center;
 `;
 const Avatar = styled.div`
   img {
     height: 100px;
     width: 100px;
+    border-radius: 50%;
   }
+  margin-bottom: 15px;
 `;
-const CharacterName = styled.div``;
-const CharacterBio = styled.div``;
+const CharacterName = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+`;
+const CharacterBio = styled.div`
+  text-align: justify;
+  line-height: 20px;
+`;

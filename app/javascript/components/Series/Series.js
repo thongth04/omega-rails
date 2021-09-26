@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import _Series from "./_Series";
 
 const Series = () => {
@@ -17,13 +16,7 @@ const Series = () => {
     return <_Series key={item.attributes.name} attributes={item.attributes} />;
   });
 
-  return (
-    <Home>
-      <div>{series_list}</div>
-    </Home>
-  );
+  return <div>{series_list}</div>;
 };
 
 export default Series;
-
-const Home = styled.div``;
