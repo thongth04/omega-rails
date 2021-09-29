@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :series, param: :slug
-      resources :characters, only: [:create, :destroy]
+      resources :characters, only: [:create, :update, :destroy]
     end
   end
 

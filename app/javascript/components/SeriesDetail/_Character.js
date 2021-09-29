@@ -15,23 +15,38 @@ const _Character = (props) => {
 
   return (
     <Profile>
-      <Avatar>
-        <img src={props.attributes.image_url} alt="" />
-      </Avatar>
-      <CharacterName>{props.attributes.name}</CharacterName>
-      <CharacterBio>{truncate(character_bio, 150)}</CharacterBio>
+      <DeleteBtn onClick={(e) => props.handleDestroy(props.id, e)}>x</DeleteBtn>
+      <div>
+        <Avatar onClick={(e) => props.handleEdit(props.id, e)}>
+          <img src={props.attributes.image_url} alt="" />
+        </Avatar>
+        <CharacterName>{props.attributes.name}</CharacterName>
+        <CharacterBio>{truncate(character_bio, 150)}</CharacterBio>
+      </div>
     </Profile>
   );
 };
 
 export default _Character;
 
+//--------Styling components-------------
 const Profile = styled.div`
   border: 1px solid #eeeeee;
   margin: 20px auto;
   padding: 20px 15px;
   border-radius: 10px;
   text-align: center;
+  position: relative;
+`;
+const DeleteBtn = styled.div`
+  background-color: red;
+  border-radius: 50%;
+  padding: 7px;
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 `;
 const Avatar = styled.div`
   img {
@@ -40,6 +55,7 @@ const Avatar = styled.div`
     border-radius: 50%;
   }
   margin-bottom: 15px;
+  cursor: pointer;
 `;
 const CharacterName = styled.div`
   font-size: 20px;

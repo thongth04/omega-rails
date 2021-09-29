@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const _CharacterForm = (props) => {
+const _EditCharacter = (props) => {
   return (
-    <FormWrapper showForm={props.showForm}>
-      <CloseBtn onClick={props.closeForm}>x</CloseBtn>
-      <h1>Add {props.attributes.name}'s Character</h1>
+    <FormWrapper showEdit={props.showEdit}>
+      <CloseBtn onClick={props.closeEdit}>x</CloseBtn>
+      <h1>Edit Character</h1>
       <form onSubmit={props.handleSubmit}>
         <Field>
           <input
@@ -40,7 +40,7 @@ const _CharacterForm = (props) => {
   );
 };
 
-export default _CharacterForm;
+export default _EditCharacter;
 
 //--------Styling components-------------
 const FormWrapper = styled.div`
@@ -54,7 +54,7 @@ const FormWrapper = styled.div`
   left: 25%;
   position: fixed;
   z-index: 1;
-  visibility: ${(props) => (props.showForm ? "visible" : "hidden")};
+  visibility: ${(props) => (props.showEdit ? "visible" : "hidden")};
   overflow: hidden;
 
   h1 {

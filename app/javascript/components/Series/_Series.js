@@ -42,6 +42,7 @@ const _Series = (props) => {
 
 export default _Series;
 
+//--------Styling components-------------
 const Card = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;

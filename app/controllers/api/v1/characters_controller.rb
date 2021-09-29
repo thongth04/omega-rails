@@ -2,7 +2,7 @@ module Api
   module V1
     class CharactersController < ApplicationController
       protect_from_forgery with: :null_session
-      before_action :find_character, only: [:destroy] # :show, :update
+      before_action :find_character, only: [:destroy, :update] # :show, :update
 
       # def show
       #   render json: CharacterSerializer.new(character).serializable_hash.to_json
@@ -18,13 +18,13 @@ module Api
         end
       end
 
-      # def update
-      #   if character.update(character_params)
-      #     render json: CharacterSerializer.new(character).serializable_hash.to_json
-      #   else
-      #     render json: {error: character.error.messages}, status: 422
-      #   end
-      # end
+      def update
+        if @character.update(character_params)
+          render json: CharacterSerializer.new(@character).serializable_hash.to_json
+        else
+          render json: {error: @character.error.messages}, status: 422
+        end
+      end
 
       def destroy
         if @character.destroy
